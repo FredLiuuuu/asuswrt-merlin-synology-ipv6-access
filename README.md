@@ -1,6 +1,6 @@
 # Synology DSM IPv6 Remote Access via Asuswrt-Merlin
 
-This repository guides you through enabling IPv6 remote access to your Synology DSM using an ASUS RT-BE86U router running Asuswrt-Merlin firmware.
+This repository guides you through enabling IPv6 remote access to your Synology DSM using an ASUS RT-BE86U router running Asuswrt-Merlin firmware (Or any other Asus router that can run Merlin Firmware).
 
 ---
 
