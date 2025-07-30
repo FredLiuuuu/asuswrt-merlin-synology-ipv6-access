@@ -38,13 +38,12 @@ By default, Synology DSM can be reached locally via IPv6 but often blocked from 
 3. **Deploy the firewall script**
    - SSH into your router:
      ```bash
-     ssh admin@192.168.50.1
+     ssh username@192.168.50.1
      ```
    - Create `/jffs/scripts/firewall-start` with:
      ```sh
-     #!/bin/sh
-     # Replace with your NAS IPv6
-     NAS6="2406:3400:20a:f4a0:9209:d0ff:fe52:4a66"
+     #!/bin/sh 
+     NAS6="2406:....:4a66" # Replace with your NAS IPv6
      ip6tables -I FORWARD -p tcp -d "$NAS6" --dport 5001 -j ACCEPT
      ```
    - Make it executable:
@@ -60,7 +59,7 @@ By default, Synology DSM can be reached locally via IPv6 but often blocked from 
      ```
    - On a WAN network (e.g., 4G), test:
      ```bash
-     curl -6 -vk https://ttintlairport.synology.me:5001/
+     curl -6 -vk https://your-domain.com:5001/
      ```
 
 5. **Security Hardening**
@@ -68,18 +67,3 @@ By default, Synology DSM can be reached locally via IPv6 but often blocked from 
    - Router: restrict IPv6 source prefixes in ip6tables if desired.
 
 ---
-
-## 📂 Repository Structure
-
-```
-.
-├── README.md          ← this file
-└── scripts
-    └── firewall-start ← IPv6 firewall rule script
-```
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
