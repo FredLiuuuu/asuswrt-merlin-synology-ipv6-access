@@ -41,6 +41,9 @@ By default, Synology DSM can be reached locally via IPv6 but often blocked from 
      ssh username@192.168.50.1
      ```
    - Create `/jffs/scripts/firewall-start` with:
+     ```bash
+     vi /jffs/scripts/firewall-start
+     ```
      ```sh
      #!/bin/sh 
      NAS6="2406:....:4a66" # Replace with your NAS IPv6
